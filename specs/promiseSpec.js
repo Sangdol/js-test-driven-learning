@@ -10,7 +10,7 @@ describe('simple promise', function() {
       let count = 0;
       window.setTimeout(function() {
         resolve(count++);
-      }, Math.random() * 100);
+      }, Math.random() * 100 + 100);
     });
 
     p.then(function(count) {
@@ -50,7 +50,7 @@ describe('Promise parallelism and sequencing', function() {
 
         if (order > 1) {
           expect(order - prevOrder).toBe(1);
-          expect(start - prevStart).toBeGreaterThan(100);
+          expect(start - prevStart).toBeGreaterThan(99);
         }
 
         prevOrder = order;
