@@ -58,7 +58,7 @@ describe('Array', function() {
   /**
    * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
    */
-  it('forEach() test', function() {
+  it('forEach()', function() {
     let sum = 0;
     let indexSum = 0;
     [1, 2, 3].forEach(function(element, index, array) {
@@ -69,5 +69,14 @@ describe('Array', function() {
     });
     expect(sum).toBe(6);
     expect(indexSum).toBe(3);
+  });
+
+  /**
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+   */
+  it('includes', function() {
+    expect([1, 2, 3].includes(1)).toBe(true);
+    expect([1, 2, 3].includes(4)).toBe(false);
+    expect([1, 2, 3].includes(undefined)).toBe(false);
   });
 });
