@@ -1,5 +1,30 @@
 describe('Array', function() {
 
+  it('should shift() remove the first element of an array and return that element', function () {
+    var arr = ['a', 'b', 'c'];
+    expect(arr.shift()).toBe('a');
+    expect(arr).toEqual(['b', 'c']);
+  });
+
+  it('should unshift() add an element to an array and return the size', function () {
+    var arr = ['a', 'b', 'c'];
+    expect(arr.unshift('1')).toBe(4);
+    expect(arr).toEqual(['1', 'a' , 'b', 'c']);
+
+    expect(arr.unshift(0, 0)).toBe(6);
+    expect(arr).toEqual([0, 0, '1', 'a' , 'b', 'c']);
+  });
+
+  it('should slice() convert arguments to array', function () {
+    function test() {
+      expect(arguments.join).toBeUndefined();
+      expect([].slice.call(arguments).join).toBeDefined();
+      expect(Array.from(arguments).join).toBeDefined();
+    }
+
+    test(1, 2);
+  });
+
   /**
    * http://stackoverflow.com/questions/8205691/coffeescript-array-vs-new-array
    */
