@@ -1,5 +1,37 @@
 describe('ES6', function() {
 
+  describe('getter and setter', function() {
+    var obj = {
+      a: 1,
+      get b() {
+        return 2;
+      },
+      // using 'a' for setter name leads to
+      // "maximum call stack size exceeded error"
+      set aa(a) {
+        this.a = a;
+      }
+    };
+
+    it('should be able to get using getter', function () {
+      expect(obj.a).toBe(1);
+      expect(obj.b).toBe(2);
+    });
+
+    it('should be able to set using setter', function() {
+      obj.aa = 10;
+      expect(obj.a).toBe(10);
+    });
+
+    it('should defineProperty define getter', function() {
+      Object.defineProperty(obj, 'c', { get: function () {
+        return 3;
+      }});
+      expect(obj.c).toBe(3);
+    });
+  });
+
+
   /**
    * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
    */
