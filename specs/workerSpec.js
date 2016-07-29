@@ -3,11 +3,20 @@
  * https://github.com/mdn/simple-web-worker
  */
 describe('Web Workers', function() {
-  var worker = new Worker('./js/worker.js');
+  it('simple', function () {
+    var worker = new Worker('./js/worker.js');
 
-  worker.postMessage(10);
+    worker.postMessage(10);
 
-  worker.onmessage = function(e) {
-    expect(e.data).toBe(100);
-  };
+    worker.onmessage = function(e) {
+      expect(e.data).toBe(100);
+    };
+  });
+
+  /**
+   * TODO https://developer.mozilla.org/en/docs/Web/API/Worker/postMessage#Transfer_Example
+   */
+  it('transferable', function () {
+
+  });
 });
