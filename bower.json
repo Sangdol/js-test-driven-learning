@@ -10,5 +10,12 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "jasmine-core": "^2.4.1",
+    "jquery": "^3.1.0",
+    "moment": "^2.14.1",
+    "pikaday": "^1.4.0",
+    "d3": "3.5.17"
+  }
 }
