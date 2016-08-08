@@ -1,0 +1,76 @@
+<!--
+http://knowledgestockpile.blogspot.kr/2012/01/understanding-selectall-data-enter.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3</title>
+    <script src="bower_components/d3/d3.js"></script>
+    <style type="text/css">
+        p {
+            font-size: 20px;
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+<div id="example1"></div>
+<script type="text/javascript">
+    pdata = [10, 12, 6, 8, 15];
+
+    selectDIV = d3.select("#example1");
+
+    selectDIV.selectAll("p")
+            .data(pdata)
+            .enter()
+            .append("p")
+            .text(function (d) {
+                return d;
+            });
+</script>
+
+<hr>
+
+<div id="example2">
+    <p>Already existing paragraph 1</p>
+    <p>Already existing paragraph 2</p>
+</div>
+<script type="text/javascript">
+    pdata = [10, 12, 6, 8, 15];
+
+    selectDIV = d3.select("#example2");
+
+    selectDIV.selectAll("p")
+            .data(pdata)
+            .enter()
+            .append("p")
+            .text(function (d) {
+                return d;
+            });
+</script>
+
+<hr>
+
+<div id="example3">
+    <p>Already existing paragraph 1</p>
+    <p>Already existing paragraph 2</p>
+</div>
+<script type="text/javascript">
+    pdata = [10, 12, 6, 8, 15];
+
+    selectDIV = d3.select("#example3");
+
+    selectDIV.selectAll("p")
+            .data(pdata, function (d) {
+                return d;
+            })
+            .enter()
+            .append("p")
+            .text(function (d) {
+                return d;
+            });
+</script>
+
+</body>
+</html>
