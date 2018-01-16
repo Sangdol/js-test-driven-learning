@@ -5,6 +5,8 @@ module.exports = function(config) {
     files: [
       'bower_components/moment/moment.js',
       'bower_components/d3/d3.js',
+      'bower_components/p5.js/lib/p5.js',
+      'bower_components/p5.js/lib/addons/p5.dom.js',
       'js/test/*.js',
       'specs/*.js'
     ],
