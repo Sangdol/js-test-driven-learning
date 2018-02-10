@@ -1,9 +1,9 @@
-describe('jasmine', function() {
+describe('jasmine', () => {
 
   /**
    * http://stackoverflow.com/questions/22413009/jasmine-javascript-testing-tobe-vs-toequal
    */
-  it('toBe and toEqual', function() {
+  it('toBe and toEqual', () => {
     var a1 = [1, 2];
     var a11 = a1;
     var a2 = [1, 2];
@@ -17,4 +17,10 @@ describe('jasmine', function() {
     expect(a1).toEqual(a2);
   });
 
+  /**
+   * https://stackoverflow.com/questions/38509815/almost-equal-in-jasmine
+   */
+  it('toBeCloseTo', () => {
+    expect(0.000000000000001).toBeCloseTo(0);
+  });
 });
